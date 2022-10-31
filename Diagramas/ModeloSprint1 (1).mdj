@@ -976,13 +976,30 @@
 											"height": 13,
 											"text": "+Foto",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGELzTBGCy45QU=",
+											"_parent": {
+												"$ref": "AAAAAAGD7eSSKkm/6pQ="
+											},
+											"model": {
+												"$ref": "AAAAAAGELzTA+iy1PCI="
+											},
+											"font": "Arial;13;0",
+											"left": 109,
+											"top": 703,
+											"width": 255,
+											"height": 13,
+											"text": "+clienteId",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 104,
 									"top": 593,
 									"width": 265,
-									"height": 113
+									"height": 128
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1005,7 +1022,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 109,
-											"top": 711,
+											"top": 726,
 											"width": 255,
 											"height": 13,
 											"text": "+realizarSolicitud()",
@@ -1014,7 +1031,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 104,
-									"top": 706,
+									"top": 721,
 									"width": 265,
 									"height": 23
 								},
@@ -3864,7 +3881,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dQMaUd2rYk="
 							},
-							"name": "Correo"
+							"name": "Correo",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4122,7 +4140,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "Descripción&Fotos"
+							"name": "Descripción&Fotos",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4130,7 +4149,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "Valor"
+							"name": "Valor",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4138,7 +4158,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "Departamento"
+							"name": "Departamento",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4146,7 +4167,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "Ciudad"
+							"name": "Ciudad",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4154,7 +4176,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "Dirección"
+							"name": "Dirección",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4162,7 +4185,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "Encargado"
+							"name": "Encargado",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4170,7 +4194,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7dnaOUjWXrU="
 							},
-							"name": "TipoOferta"
+							"name": "TipoOferta",
+							"type": ""
 						}
 					]
 				},
@@ -4243,7 +4268,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7eSSKUm3SCk="
 							},
-							"name": "Dirección"
+							"name": "Dirección",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4251,7 +4277,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7eSSKUm3SCk="
 							},
-							"name": "TipoSolicitud"
+							"name": "TipoSolicitud",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4304,7 +4331,16 @@
 							"_parent": {
 								"$ref": "AAAAAAGD7eSSKUm3SCk="
 							},
-							"name": "Foto"
+							"name": "Foto",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGELzTA+iy1PCI=",
+							"_parent": {
+								"$ref": "AAAAAAGD7eSSKUm3SCk="
+							},
+							"name": "clienteId"
 						}
 					],
 					"operations": [
@@ -4918,7 +4954,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEDF96qyxJPkU="
 							},
-							"name": "Id"
+							"name": "Id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4926,7 +4963,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEDF96qyxJPkU="
 							},
-							"name": "Documento"
+							"name": "Documento",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4934,7 +4972,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEDF96qyxJPkU="
 							},
-							"name": "Nombre"
+							"name": "Nombre",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4942,7 +4981,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGEDF96qyxJPkU="
 							},
-							"name": "Contacto"
+							"name": "Contacto",
+							"type": ""
 						}
 					]
 				}

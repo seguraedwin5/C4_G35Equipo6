@@ -81,6 +81,10 @@ export class Vehiculo extends Entity {
   })
   TipoOferta: string;
 
+  @property({
+    type: 'string',
+  })
+  asesorId?: string;
   // Define well-known properties here
 
   // Indexer property to allow additional data
