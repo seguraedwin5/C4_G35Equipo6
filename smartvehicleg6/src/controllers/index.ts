@@ -11,3 +11,4 @@ export * from './asesor.controller';
 export * from './administrador.controller';
 export * from './cliente.controller';
 export * from './asesor-vehiculo.controller';
+export * from './usuario.controller';
