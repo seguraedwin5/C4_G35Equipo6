@@ -1,4 +1,6 @@
+import { authenticate } from '@loopback/authentication';
 import {Entity, model, property} from '@loopback/repository';
+
 
 @model({settings: {strict: false}})
 export class Vehiculo extends Entity {
