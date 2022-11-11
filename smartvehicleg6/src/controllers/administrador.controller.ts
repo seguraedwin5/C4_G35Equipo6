@@ -44,7 +44,7 @@ export class AdministradorController {
     })
     administrador: Omit<Administrador, 'id'>,
   ): Promise<Administrador> {
-    return this.administradorRepository.create(administrador);
+     return this.administradorRepository.create(administrador);
   }
 
   @get('/administradores/count')
