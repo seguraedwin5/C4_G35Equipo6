@@ -1,7 +1,7 @@
 import {injectable, /* inject, */ BindingScope} from '@loopback/core';
 import { repository } from '@loopback/repository';
 import { llaves } from '../config/llaves';
-import { Usuario } from '../models';
+import { Asesor, Cliente, Usuario } from '../models';
 import { UsuarioRepository } from '../repositories';
 const generador = require("password-generator");
 const encritptar = require("crypto-js");
@@ -24,11 +24,11 @@ export class AutenticacionService {
     let claveCifrada = encritptar.MD5(clave).toString();
     return claveCifrada;
   }
-  identificarUsuario(usuario: string, clave: string){
+  identificarUsuario(usuario: string, clave: string, rol: string){
     try {
-      const a = this.usuarioRepository.findOne({where : {correo: usuario, contrasena: clave}});
-      if (a){
-        return a;
+      const u = this.usuarioRepository.findOne({where : {correo: usuario, contrasena: clave, rol: rol}});
+      if (u){
+        return u;
       }
       return false;
     } catch {
@@ -41,7 +41,7 @@ export class AutenticacionService {
         id: usuario.id,
         correo: usuario.correo,
         contrasena: usuario.contrasena,
-        rol: usuario.rol = usuario
+        rol: usuario.rol
       }
     }, llaves.claveJWT);
   return token;
