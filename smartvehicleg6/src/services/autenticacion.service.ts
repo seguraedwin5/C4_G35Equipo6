@@ -40,7 +40,8 @@ export class AutenticacionService {
       data: {
         id: usuario.id,
         correo: usuario.correo,
-        contrasena: usuario.contrasena
+        contrasena: usuario.contrasena,
+        rol: usuario.rol = usuario
       }
     }, llaves.claveJWT);
   return token;

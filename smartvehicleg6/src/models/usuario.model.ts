@@ -2,6 +2,7 @@ import {Entity, model, property} from '@loopback/repository';
 
 @model()
 export class Usuario extends Entity {
+  [x: string]: any;
   @property({
     type: 'string',
     id: true,

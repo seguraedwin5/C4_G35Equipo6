@@ -21,12 +21,12 @@ export class EstrategiaAdministrador implements AuthenticationStrategy{
     if(token){
       let datos = this.servicioAutenticacion.ValidarTokenJWT(token);
       if(datos){
-        //if(datos.data.rol=='admin'){
+        if(datos.data.rol=='admin'){
         let perfil: UserProfile = Object.assign({
           nombre: datos.data.nombre
         });
         return perfil;
-        //}
+        }
       }else{
         throw new HttpErrors[401]("token inválido");
       }
