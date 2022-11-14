@@ -23,6 +23,7 @@ import { UsuarioRepository } from '../repositories';
 import { AutenticacionService } from '../services';
 import {llaves} from '../config/llaves';
 import { service } from '@loopback/core';
+import { Credenciales } from '../models/credenciales.model';
 const axios = require('axios')
 
 export class UsuarioController {
@@ -61,6 +62,33 @@ export class UsuarioController {
     }
   };
 
+
+  @post("/identificarUsuario", {
+    responses: {
+      '200' : {
+        description: "Identificación de usuarios"
+      }
+    }
+  })
+  async identificarUsuario(
+    @requestBody() credenciales: Credenciales
+  ){
+    const p = await this.authenticationService.identificarUsuario(credenciales.usuario,credenciales.clave,credenciales.rol);
+    if(p){
+      const token = this.authenticationService.generarTokenJWT(p);
+      return {
+        datos: {
+          nombre: p.nombres,
+          correo: p.correo,
+          id: p.id,
+          rol: p.rol //es opscional xq ya va en el token
+        },
+        tk: token
+      }
+    }else{
+      throw new HttpErrors[401]("Datos invalidos - no existe");
+    }
+  }
 
   @post('/usuarios')
   @response(200, {
