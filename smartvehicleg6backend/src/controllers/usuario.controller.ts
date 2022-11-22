@@ -1,52 +1,44 @@
+import {service} from '@loopback/core';
 import {
   Count,
   CountSchema,
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
-  HttpErrors,
+  del, get,
+  getModelSchemaRef, HttpErrors, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
-import {Credenciales, Usuario} from '../models';
-import { UsuarioRepository } from '../repositories';
-import { AutenticacionService } from '../services';
 import {llaves} from '../config/llaves';
-import { service } from '@loopback/core';
-import { Credenciales } from '../models/credenciales.model';
+import {Credenciales, Usuario} from '../models';
+import {UsuarioRepository} from '../repositories';
+import {AutenticacionService} from '../services';
 const axios = require('axios')
 
 export class UsuarioController {
   constructor(
     @repository(UsuarioRepository)
     public usuarioRepository: UsuarioRepository,
-    
+
     @service(AutenticacionService)
     public authenticationService: AutenticacionService,
-  ) {}
-  
+  ) { }
+
   //metodo para identificar usuario
   @post("/loginUsuario", {
     responses: {
       '200': {
-        description:'Identificacion de usuarios'
+        description: 'Identificacion de usuarios'
       }
     }
   })
-  async LoginUsuario( 
+  async LoginUsuario(
     @requestBody() credenciales: Credenciales
-  ) { 
-    let user = await this.authenticationService.identificarUsuario(credenciales.usuario, credenciales.password);
+  ) {
+    let user = await this.authenticationService.identificarUsuario(credenciales.usuario, credenciales.clave);
     if (user) {
       let token = this.authenticationService.generarTokenJWT(user);
       return {
@@ -65,16 +57,16 @@ export class UsuarioController {
 
   @post("/identificarUsuario", {
     responses: {
-      '200' : {
+      '200': {
         description: "Identificación de usuarios"
       }
     }
   })
   async identificarUsuario(
     @requestBody() credenciales: Credenciales
-  ){
-    const p = await this.authenticationService.identificarUsuario(credenciales.usuario,credenciales.clave,credenciales.rol);
-    if(p){
+  ) {
+    const p = await this.authenticationService.identificarUsuario(credenciales.usuario, credenciales.clave);
+    if (p) {
       const token = this.authenticationService.generarTokenJWT(p);
       return {
         datos: {
@@ -85,7 +77,7 @@ export class UsuarioController {
         },
         tk: token
       }
-    }else{
+    } else {
       throw new HttpErrors[401]("Datos invalidos - no existe");
     }
   }
