@@ -1,8 +1,8 @@
-import {injectable, /* inject, */ BindingScope} from '@loopback/core';
-import { repository } from '@loopback/repository';
-import { llaves } from '../config/llaves';
-import { Asesor, Cliente, Usuario } from '../models';
-import { UsuarioRepository } from '../repositories';
+import { /* inject, */ BindingScope, injectable} from '@loopback/core';
+import {repository} from '@loopback/repository';
+import {llaves} from '../config/llaves';
+import {Usuario} from '../models';
+import {UsuarioRepository} from '../repositories';
 const generador = require("password-generator");
 const encritptar = require("crypto-js");
 const jwt = require("jsonwebtoken");
@@ -13,7 +13,7 @@ export class AutenticacionService {
   constructor(
     @repository(UsuarioRepository)
     public usuarioRepository: UsuarioRepository
-  ) {}
+  ) { }
 
   GenerarClave() {
     let clave = generador(8, false);
@@ -24,10 +24,10 @@ export class AutenticacionService {
     let claveCifrada = encritptar.MD5(clave).toString();
     return claveCifrada;
   }
-  identificarUsuario(usuario: string, clave: string, rol: string){
+  identificarUsuario(usuario: string, clave: string) {
     try {
-      const u = this.usuarioRepository.findOne({where : {correo: usuario, contrasena: clave, rol: rol}});
-      if (u){
+      const u = this.usuarioRepository.findOne({where: {correo: usuario, contrasena: clave}});
+      if (u) {
         return u;
       }
       return false;
@@ -35,7 +35,7 @@ export class AutenticacionService {
       return false;
     }
   }
-  generarTokenJWT(usuario: Usuario){
+  generarTokenJWT(usuario: Usuario) {
     const token = jwt.sign({
       data: {
         id: usuario.id,
@@ -44,9 +44,9 @@ export class AutenticacionService {
         rol: usuario.rol
       }
     }, llaves.claveJWT);
-  return token;
+    return token;
   }
-  ValidarTokenJWT(token: string){
+  ValidarTokenJWT(token: string) {
     try {
       let datos = jwt.verify(token, llaves.claveJWT);
       return datos;
