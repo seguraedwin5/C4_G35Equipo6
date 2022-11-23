@@ -22,8 +22,12 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/nosotros/nosotros.module").then(x => x.NosotrosModule) 
   },
   {
-    path: 'pedidos',
-    loadChildren: () => import("./modulos/contactenos/contactenos.module").then(x => x.ContactenosModule) 
+    path: 'asesor',
+    loadChildren: () => import("./modulos/asesor/asesor.module").then(x => x.AsesorModule) 
+  },
+  {
+    path: 'cliente',
+    loadChildren: () => import("./modulos/cliente/cliente.module").then(x => x.ClienteModule) 
   },
   {
     path:'**',

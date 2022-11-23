@@ -1,3 +1,4 @@
+import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,7 +22,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

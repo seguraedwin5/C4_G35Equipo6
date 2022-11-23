@@ -7,9 +7,9 @@ import { EditarPersonaComponent } from './personas/editar-persona/editar-persona
 import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-persona.component';
 import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona.component';
 import { CrearVehiculoComponent } from './personas/crear-vehiculo/crear-vehiculo.component';
-import { BuscarVehiculoComponent } from './productos/buscar-vehiculo/buscar-vehiculo.component';
-import { EditarVehiculoComponent } from './productos/editar-vehiculo/editar-vehiculo.component';
-import { EliminarVehiculoComponent } from './productos/eliminar-vehiculo/eliminar-vehiculo.component';
+import { EditarVehiculoComponent } from './vehiculos/editar-vehiculo/editar-vehiculo.component';
+import { BuscarVehiculoComponent } from './vehiculos/buscar-vehiculo/buscar-vehiculo.component';
+import { EliminarVehiculoComponent } from './vehiculos/eliminar-vehiculo/eliminar-vehiculo.component';
 
 
 @NgModule({
