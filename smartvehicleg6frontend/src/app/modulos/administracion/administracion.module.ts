@@ -10,7 +10,7 @@ import { EditarVehiculoComponent } from './vehiculos/editar-vehiculo/editar-vehi
 import { BuscarVehiculoComponent } from './vehiculos/buscar-vehiculo/buscar-vehiculo.component';
 import { EliminarVehiculoComponent } from './vehiculos/eliminar-vehiculo/eliminar-vehiculo.component';
 import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-vehiculos.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,7 +30,8 @@ import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-ve
   imports: [
     CommonModule,
     AdministracionRoutingModule,
-
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class AdministracionModule { }
