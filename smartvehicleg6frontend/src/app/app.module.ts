@@ -7,6 +7,8 @@ import { BarraNavegacionComponent } from './plantilla/barra-navegacion/barra-nav
 import { PiePaginaComponent } from './plantilla/pie-pagina/pie-pagina.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ErrorComponent } from './plantilla/error/error.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

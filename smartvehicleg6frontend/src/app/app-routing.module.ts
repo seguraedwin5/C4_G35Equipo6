@@ -18,12 +18,12 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule) 
   },
   {
-    path: 'administracion',
-    loadChildren: () => import("./modulos/administracion/administracion.module").then(x => x.AdministracionModule) 
+    path: 'nosotros',
+    loadChildren: () => import("./modulos/nosotros/nosotros.module").then(x => x.NosotrosModule) 
   },
   {
     path: 'pedidos',
-    loadChildren: () => import("./modulos/pedidos/pedidos.module").then(x => x.PedidosModule) 
+    loadChildren: () => import("./modulos/contactenos/contactenos.module").then(x => x.ContactenosModule) 
   },
   {
     path:'**',

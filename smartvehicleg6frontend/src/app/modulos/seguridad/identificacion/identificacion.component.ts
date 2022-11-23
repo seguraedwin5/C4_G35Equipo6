@@ -19,4 +19,9 @@ export class IdentificacionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  IdentificarUsuario()
+  {
+    alert("ERROR")
+  }
+
 }
