@@ -31,11 +31,11 @@ export class VehiculosService {
   }
 
   BuscarVehiculo$(id: string): Observable<ModeloVehiculo>{
-    return this.http.get<ModeloVehiculo>(`${this.url}/vehiculos/:${id}`);
+    return this.http.get<ModeloVehiculo>(`${this.url}/vehiculos/${id}`);
   }
 
 
   EliminarVehiculo$(id: string): Observable<ModeloVehiculo>{
-    return this.http.delete<ModeloVehiculo>(`${this.url}/vehiculos/:${id}`)
+    return this.http.delete<ModeloVehiculo>(`${this.url}/vehiculos/${id}`)
   }
 }
