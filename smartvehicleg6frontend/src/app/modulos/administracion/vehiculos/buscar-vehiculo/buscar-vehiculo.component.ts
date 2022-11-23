@@ -15,7 +15,7 @@ export class BuscarVehiculoComponent implements OnInit {
 
   ngOnInit(): void {
     
-    elems: QueryList<'.carousel'>
+    
 
     let elems = document.querySelectorAll('.carousel');
     let instance = Carousel.init(elems)
