@@ -12,6 +12,8 @@ import { EliminarVehiculoComponent } from './vehiculos/eliminar-vehiculo/elimina
 import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-vehiculos.component';
 
 
+
+
 @NgModule({
   declarations: [
     CrearPersonaComponent,
@@ -23,10 +25,12 @@ import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-ve
     EditarVehiculoComponent,
     EliminarVehiculoComponent,
     ListarVehiculosComponent,
+    
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+
   ]
 })
 export class AdministracionModule { }

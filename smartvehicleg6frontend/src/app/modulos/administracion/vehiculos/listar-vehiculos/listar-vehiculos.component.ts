@@ -12,4 +12,7 @@ export class ListarVehiculosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ListarVehiculos() {
+    
+  }
 }

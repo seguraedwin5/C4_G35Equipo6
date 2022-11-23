@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Dropdown } from 'materialize-css';
 @Component({
   selector: 'app-buscar-vehiculo',
   templateUrl: './buscar-vehiculo.component.html',
@@ -11,5 +11,5 @@ export class BuscarVehiculoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }
