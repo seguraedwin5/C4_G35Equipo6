@@ -24,6 +24,7 @@
     "crypto-js": "^4.1.1",
     "cryptojs": "^2.5.3",
     "materialize-css": "^1.0.0-rc.2",
+    "ng-image-slider": "^6.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

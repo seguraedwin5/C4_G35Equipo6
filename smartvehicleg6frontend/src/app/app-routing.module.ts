@@ -18,8 +18,8 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule) 
   },
   {
-    path: 'administracion',
-    loadChildren: () => import("./modulos/administracion/administracion.module").then(x => x.AdministracionModule) 
+    path: 'nosotros',
+    loadChildren: () => import("./modulos/nosotros/nosotros.module").then(x => x.NosotrosModule) 
   },
   {
     path: 'asesor',
