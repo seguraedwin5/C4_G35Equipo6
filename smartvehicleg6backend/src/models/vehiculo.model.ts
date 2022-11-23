@@ -1,8 +1,7 @@
-import { authenticate } from '@loopback/authentication';
 import {Entity, model, property} from '@loopback/repository';
 
 
-@model({settings: {strict: false}})
+@model({settings: {strict: true}})
 export class Vehiculo extends Entity {
   @property({
     type: 'string',
@@ -91,7 +90,7 @@ export class Vehiculo extends Entity {
 
   // Indexer property to allow additional data
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
+
 
   constructor(data?: Partial<Vehiculo>) {
     super(data);
