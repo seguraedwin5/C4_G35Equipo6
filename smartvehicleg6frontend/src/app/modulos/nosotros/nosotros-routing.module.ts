@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InformacionComponent } from './informacion/informacion.component';
 
-const routes: Routes = [];
-
-const router: Routes=[
+const routes: Routes = [
 
   {
-    path: 'crear-visio'
+    path: "informacion",
+    component: InformacionComponent
   }
-  ];
+];
 
 
 @NgModule({
