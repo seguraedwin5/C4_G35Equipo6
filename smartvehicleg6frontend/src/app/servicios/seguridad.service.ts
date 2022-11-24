@@ -26,6 +26,7 @@ export class SeguridadService {
   }
 
   AlmacenarSesion(datos: ModeloIdentificar) {
+    datos.estaIdentificado=true;
     let stringDatos = JSON.stringify(datos);
     localStorage.setItem("datosSesion", stringDatos);
   }
