@@ -1,16 +1,36 @@
-import { Component } from '@angular/core';
-import { FormBuilder , FormGroup } from '@angular/forms';
-import { ModeloVehiculo } from 'src/app/modelos/vehiculo.modelo';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-crear-vehiculo',
   templateUrl: './crear-vehiculo.component.html',
   styleUrls: ['./crear-vehiculo.component.css']
 })
-export class CrearVehiculoComponent {
+export class CrearVehiculoComponent implements OnInit {
 
+  fgvalidador: FormGroup;
+    
   
-  constructor(private builder: FormBuilder) { }
-  fgcrear: FormGroup = this.builder.group({
-    'name': []
-  })
+
+  constructor(private fb: FormBuilder) { 
+    this.fgvalidador = this.fb.group({
+        'nombre': ['',[Validators.required]],
+        'tipo': ['',[Validators.required]],
+        'marca': ['',[Validators.required]],
+        'placa': ['',[Validators.required]],
+        'disponibilidad': ['',[Validators.required]],
+        'descripcion': ['',[Validators.required]],
+        'foto': ['',[Validators.required]],
+        'valor': ['',[Validators.required]],
+        'departamento': ['',[Validators.required]],
+        'ciudad': ['',[Validators.required]],
+        'direccion': ['',[Validators.required]],
+        'tipooferta': ['',[Validators.required]]
+      })
+    
+  }
+  
+
+  ngOnInit(): void {
+  }
+
 }
