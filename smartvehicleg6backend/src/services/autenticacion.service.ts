@@ -25,23 +25,32 @@ export class AutenticacionService {
     return claveCifrada;
   }
   identificarUsuario(usuario: string, clave: string) {
+    console.log(`usuario: ${usuario} clave: ${clave}`);
     try {
-      const u = this.usuarioRepository.findOne({where: {correo: usuario, contrasena: clave}});
+      console.log(`usuario: ${usuario} clave: ${clave}`);
+      const u = this.usuarioRepository.findOne({
+        where: {
+          correo: usuario,
+          contrasena: clave,
+        }
+      });
       if (u) {
+        u.then(response => console.log(response));
         return u;
       }
       return false;
-    } catch {
+    } catch (error) {
+      console.log(error)
       return false;
     }
   }
   generarTokenJWT(usuario: Usuario) {
-    const token = jwt.sign({
+    let token = jwt.sign({
       data: {
         id: usuario.id,
         correo: usuario.correo,
         contrasena: usuario.contrasena,
-        rol: usuario.rol
+        id_rol: usuario.rol
       }
     }, llaves.claveJWT);
     return token;

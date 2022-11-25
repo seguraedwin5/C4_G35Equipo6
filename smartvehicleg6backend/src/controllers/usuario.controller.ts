@@ -65,7 +65,8 @@ export class UsuarioController {
   async identificarUsuario(
     @requestBody() credenciales: Credenciales
   ) {
-    const p = await this.authenticationService.identificarUsuario(credenciales.usuario, credenciales.clave);
+    let p = await this.authenticationService.identificarUsuario(credenciales.usuario, credenciales.clave);
+    console.log(p)
     if (p) {
       const token = this.authenticationService.generarTokenJWT(p);
       return {
@@ -102,6 +103,7 @@ export class UsuarioController {
   ): Promise<Usuario> {
     //implementar accion de notificacion
     let clave = this.authenticationService.GenerarClave();
+    console.log("contrasena: " + clave.toString())
     let claveCifrada = this.authenticationService.CifrarClave(clave);
     usuario.contrasena = claveCifrada
     let usercreated = await this.usuarioRepository.create(usuario);
@@ -116,7 +118,7 @@ export class UsuarioController {
         asunto: asunto,
         contenido: contenido
       }
-    }).then((res: any) => console.log(res.status))
+    }).then((res: any) => console.log(res.status)).catch((error: any) => console.log('error' + error.toString()))
     return usercreated;
   }
 
