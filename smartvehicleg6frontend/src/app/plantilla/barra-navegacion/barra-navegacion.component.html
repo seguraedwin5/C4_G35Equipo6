@@ -3,17 +3,11 @@
         <a routerLink="/inicio" class="brand-logo">SMART VEHICLE  <i class="material-icons">directions_car</i></a>
         <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-<<<<<<< HEAD
-            <li><a routerLink="/administracion/listar-vehiculos">Vehiculos</a></li>
-            <li><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
-            <li><a routerLink="/seguridad/identificar" class="letra-grande">Iniciar sesión</a></li>
-=======
             <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-vehiculos">Vehiculos</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/nosotros">Nuestra Compañia</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/modulos/contactenos">Contactenos</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
             <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar" class="letra-grande">Iniciar sesión</a></li>
->>>>>>> c14f026abe424e34487683b0f83683becfe877c9
         </ul>
     </div>
 </nav>
