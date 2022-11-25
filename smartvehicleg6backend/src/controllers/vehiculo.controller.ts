@@ -22,6 +22,7 @@ export class VehiculoController {
     public vehiculoRepository: VehiculoRepository,
   ) { }
 
+  @authenticate.skip()
   @post('/vehiculos')
   @response(200, {
     description: 'Vehiculo model instance',
