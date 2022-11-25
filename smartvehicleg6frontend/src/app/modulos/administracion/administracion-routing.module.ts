@@ -23,10 +23,6 @@ const routes: Routes = [
     component: EliminarPersonaComponent
   },
   {
-    path: 'crear-vehiculo',
-    component: CrearVehiculoComponent
-  },
-  {
     path: 'editar-vehiculo',
     component: EditarVehiculoComponent
   },
@@ -41,6 +37,10 @@ const routes: Routes = [
   {
     path: 'buscar-vehiculo',
     component: BuscarVehiculoComponent
+  },
+  {
+    path: 'crear-vehiculo',
+    component: CrearVehiculoComponent
   }
 ];
 
