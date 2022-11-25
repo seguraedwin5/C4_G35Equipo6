@@ -4,8 +4,6 @@
         <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-vehiculos">Vehiculos</a></li>
-            <li *ngIf="seInicioSesion"><a routerLink="/nosotros">Nuestra Compañia</a></li>
-            <li *ngIf="seInicioSesion"><a routerLink="/modulos/contactenos">Contactenos</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
             <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar" class="letra-grande">Iniciar sesión</a></li>
         </ul>
@@ -13,14 +11,7 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-<<<<<<< HEAD
-    
-    <li><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
-    <li><a routerLink="/seguridad/identificar">Iniciar sesión</a></li>
-=======
-    <li *ngIf="seInicioSesion"><a routerLink="/modulos/nosotros">Nuestra Compañia</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/modulos/contactenos">Contactenos</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
+   
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
     <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar sesión</a></li>
->>>>>>> c14f026abe424e34487683b0f83683becfe877c9
 </ul>
