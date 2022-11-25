@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import * as cryptoJS from "crypto-js";
 import { SeguridadService } from '../../../servicios/seguridad.service';
-
+import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
 @Component({
   selector: 'app-identificacion',
   templateUrl: './identificacion.component.html',
@@ -11,16 +11,20 @@ import { SeguridadService } from '../../../servicios/seguridad.service';
 })
 export class IdentificacionComponent implements OnInit {
 
+ 
   fgValidador: FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]],
     'clave': ['', [Validators.required]]
   });
 
+  @ViewChild(NotificacionesComponent) notif: NotificacionesComponent | undefined;
+
   constructor(private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
-    private router: Router) { }
+    private router: Router, ) { }
 
   ngOnInit(): void {
+    
   }
 
   IdentificarUsuario() {
@@ -34,6 +38,9 @@ export class IdentificacionComponent implements OnInit {
         this.servicioSeguridad.AlmacenarSesion(datos);
         this.servicioSeguridad.RefrescarDatosSesion(datos)
         this.router.navigate(["/inicio"]);
+        this.notif?.getAlert().fire()
+        
+        
       },
       error: (error: any) => {
         alert("Error");
