@@ -4,8 +4,8 @@
         <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-vehiculos">Vehiculos</a></li>
-            <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
-            <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar" class="letra-grande">Iniciar sesión</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
+            <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificacion" class="letra-grande">Iniciar sesión</a></li>
         </ul>
     </div>
 </nav>
@@ -13,5 +13,5 @@
 <ul class="sidenav" id="mobile-demo">
    
     <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
-    <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar sesión</a></li>
+    <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
 </ul>
