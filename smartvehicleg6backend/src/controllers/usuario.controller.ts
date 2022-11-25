@@ -74,7 +74,7 @@ export class UsuarioController {
           nombre: p.nombres,
           correo: p.correo,
           id: p.id,
-          rol: p.rol //es opscional xq ya va en el token
+          rol: p.id_rol //es opscional xq ya va en el token
         },
         tk: token
       }
