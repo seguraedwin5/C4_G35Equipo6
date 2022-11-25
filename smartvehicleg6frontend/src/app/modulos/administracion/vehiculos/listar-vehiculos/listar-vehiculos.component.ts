@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ModeloVehiculo } from 'src/app/modelos/vehiculo.modelo';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { VehiculosService } from 'src/app/servicios/administracion/vehiculos.service';
 
 @Component({
@@ -21,10 +19,10 @@ export class ListarVehiculosComponent implements OnInit {
 
   ListarVehiculos() {
     this.serviciovehiculo.ListarVehiculos$().subscribe({
-      next: (newlistavehiculos) => {
+      next: (newlistavehiculos:any) => {
         this.listavehiculos = newlistavehiculos;
       },
-      error: (error) => {
+      error: (error:any) => {
         console.log(error)
       }
       

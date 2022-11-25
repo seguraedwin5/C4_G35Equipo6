@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
-
+import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path:"inicio",
@@ -35,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'administracion',
-    loadChildren: () => import("./modulos/administracion/administracion.module").then(m => m.AdministracionModule)
+    loadChildren: () => import("./modulos/administracion/administracion.module").then(x => x.AdministracionModule)
   },
   {
     path:'**',
