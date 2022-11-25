@@ -137,7 +137,7 @@ export class VehiculoController {
   ): Promise<void> {
     await this.vehiculoRepository.replaceById(id, vehiculo);
   }
-
+  @authenticate.skip()
   @del('/vehiculos/{id}')
   @response(204, {
     description: 'Vehiculo DELETE success',

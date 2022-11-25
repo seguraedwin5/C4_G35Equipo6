@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ModeloVehiculo } from 'src/app/modelos/vehiculo.modelo';
 import { VehiculosService } from 'src/app/servicios/administracion/vehiculos.service';
 @Component({
@@ -13,7 +14,7 @@ export class CrearVehiculoComponent implements OnInit {
   private vehiculo: ModeloVehiculo;
   
 
-  constructor(private fb: FormBuilder, private serviciovehiculo: VehiculosService) { 
+  constructor(private fb: FormBuilder, private serviciovehiculo: VehiculosService, private router:Router) { 
     this.fgvalidador = this.fb.group({
         'nombre': ['',[Validators.required]],
         'tipo': ['',[Validators.required]],
@@ -44,7 +45,7 @@ export class CrearVehiculoComponent implements OnInit {
     this.vehiculo!.Disponibilidad = this.fgvalidador.controls['disponibilidad'].value
     this.vehiculo!.Descripcion = this.fgvalidador.controls['descripcion'].value
     this.vehiculo!.Foto = this.fgvalidador.controls['foto'].value
-    this.vehiculo!.Valor = this.fgvalidador.controls['valor'].value
+    this.vehiculo!.Valor = this.fgvalidador.controls['valor'].value.toString()
     this.vehiculo!.Departamento = this.fgvalidador.controls['departamento'].value
     this.vehiculo!.Ciudad = this.fgvalidador.controls['ciudad'].value
     this.vehiculo!.Direccion = this.fgvalidador.controls['direccion'].value
@@ -52,7 +53,8 @@ export class CrearVehiculoComponent implements OnInit {
     this.serviciovehiculo.AgregarVehiculo$(this.vehiculo!).subscribe({
     
       next: (datos) => {
-        alert( `Vehiculo ${datos.Marca} Placa: ${datos.Placa} Creado Correctamente `)
+        alert(`Vehiculo ${datos.Marca} Placa: ${datos.Placa} Creado Correctamente `)
+        this.router.navigate(['/administracion/listar-vehiculos'])
       },
       error: (err) => {
         alert('no se pudo crear el vehiculo')

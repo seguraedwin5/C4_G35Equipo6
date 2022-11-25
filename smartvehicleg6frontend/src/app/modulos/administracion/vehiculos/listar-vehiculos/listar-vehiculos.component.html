@@ -18,9 +18,9 @@
             <td>{{v.Disponibilidad}} </td>
             <td>{{v.Valor}} </td>
             <td class="row ">
-                <a class="btn-small col s3 blue accent-2">Ver</a>
-                <a class="btn-small col s3">Editar</a>
-                <a class="btn-small col s3 red darken-2">Eliminar</a>
+                <a class="btn-small col s3 blue accent-2 mr30" [routerLink]="['/administracion/buscar-vehiculo', v.Id]">Ver</a>
+                <a class="btn-small col s3 mr30"[routerLink]="['/administracion/editar-vehiculo', v.Id]" >Editar</a>
+                <a class="btn-small col s3 red darken-2 mr30" [routerLink]="['/administracion/eliminar-vehiculo', v.Id]">Eliminar</a>
             </td>
             
             

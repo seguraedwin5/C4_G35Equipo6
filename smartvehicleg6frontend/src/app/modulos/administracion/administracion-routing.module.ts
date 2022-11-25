@@ -23,11 +23,11 @@ const routes: Routes = [
     component: EliminarPersonaComponent
   },
   {
-    path: 'editar-vehiculo',
+    path: 'editar-vehiculo/:id',
     component: EditarVehiculoComponent
   },
   {
-    path: 'eliminar-vehiculo',
+    path: 'eliminar-vehiculo/:id',
     component: EliminarVehiculoComponent
   },
   {
@@ -35,7 +35,7 @@ const routes: Routes = [
     component: ListarVehiculosComponent
   },
   {
-    path: 'buscar-vehiculo',
+    path: 'buscar-vehiculo/:id',
     component: BuscarVehiculoComponent
   },
   {

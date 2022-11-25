@@ -1,4 +1,5 @@
-import { Component, Directive, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Element } from '@angular/compiler';
+import { AfterViewInit, Component, Directive, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Dropdown } from 'materialize-css';
 import { Carousel } from 'materialize-css';
 @Directive({ selector: '.carousel' })
@@ -9,16 +10,16 @@ class MyCarousel{}
   templateUrl: './buscar-vehiculo.component.html',
   styleUrls: ['./buscar-vehiculo.component.css']
 })
-export class BuscarVehiculoComponent implements OnInit {
-  
+export class BuscarVehiculoComponent implements AfterViewInit {
+  @ViewChildren('carousel') elems!: QueryList<'carousel'>;
+
   constructor() { }
-
-  ngOnInit(): void {
-    
-    
-
-    let elems = document.querySelectorAll('.carousel');
-    let instance = Carousel.init(elems)
+  ngAfterViewInit(): void {
+    this.elems.forEach((carousel)=>console.log(carousel))
   }
+
+ 
+  
+  
   
 }
