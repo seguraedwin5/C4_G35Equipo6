@@ -64,6 +64,7 @@ export class SeguridadService {
   }
 
   ObtenerDatosUsuarioEnSesion() {
+    this.VerificarSesionActual()
     return this.datosUsuarioEnSesion.asObservable();
   }
 
