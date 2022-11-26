@@ -14,14 +14,6 @@ export class BuscarSolicitudComponent implements OnInit {
       constructor(private solicitudServicio: SolicitudService) { }
     
       ngOnInit(): void {
-        this.ObtenerListadoSolicitudes();
       }
-    
-      ObtenerListadoSolicitudes(){
-        this.solicitudServicio.ObtenerRegistros().subscribe((datos: ModeloSolicitud[]) => {
-          this.listadoRegistros = datos;
-        })
-      }
-    
-    
+        
 }

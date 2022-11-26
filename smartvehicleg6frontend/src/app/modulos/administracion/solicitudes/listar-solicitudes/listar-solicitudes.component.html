@@ -1,1 +1,31 @@
-<p>listar-solicitudes works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <!--<th>Tipo</th>
+            <th>Marca</th>
+            <th>Disponibilidad</th>
+            <th>Valor</th>
+            <th>Acciones</th>-->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of listasolicitudes"> 
+            
+            <td>{{v.id}}</td>
+            <td>{{v.Nombre}}</td>
+            <!--<td>{{v.Tipo}} </td>
+            <td>{{v.Marca}} </td>
+            <td>{{v.Disponibilidad}} </td>
+            <td>{{v.Valor}} </td>-->
+            <td class="row ">
+                <a class="btn-small col s3 blue accent-2">Ver</a>
+                <a class="btn-small col s3">Editar</a>
+                <a class="btn-small col s3 red darken-2">Eliminar</a>
+            </td>
+            
+            
+        </tr>
+    </tbody>
+</table>
