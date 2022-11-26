@@ -1,1 +1,70 @@
-<p>editar-vehiculo works!</p>
+<div class="row">
+    <form [formGroup]="fgvalidador" (ngSubmit)="EditarVehiculo()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input   formControlName="nombre" id="txt_nombre" type="text" class="validate" >
+          <label class="active" for="txt_nombre">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="tipo" id="tipo" type="text" class="validate">
+          <label for="tipo">Tipo</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="marca" id="marca" type="text" class="validate">
+          <label class="active" for="marca">Marca</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="placa" id="placa" type="text" class="validate">
+          <label for="placa">Placa </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="disponibilidad" id="disponibilidad" type="text" class="validate">
+          <label class="active" for="disponibilidad">Disponibilidad </label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="descripcion"id="descripcion" type="text" class="validate">
+          <label for="descripcion">Descripcion</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="foto" id="foto" type="text" class="validate">
+          <label class="active" for="foto">Foto </label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="valor" id="valor" type="number" class="validate">
+          <label for="valor">Valor</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="ciudad" id="ciudad" type="text" class="validate">
+          <label class="active" for="ciudad">Ciudad </label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="departamento" id="departamento" type="text" class="validate">
+          <label for="departamento">Departamento</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="direccion" id="direccion" type="text" class="validate">
+          <label class="active" for="direccion"> Direccion</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="tipooferta" id="tipooferta" type="text" class="validate">
+          <label for="tipooferta">Tipo Oferta</label>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn teal col s2" type="submit">Actualizar</button>
+      </div>
+    </form>
+    
+    
+  </div>
+  

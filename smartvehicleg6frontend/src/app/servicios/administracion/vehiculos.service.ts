@@ -22,8 +22,9 @@ export class VehiculosService {
     });
   }
 
-  EditarVehiculo$(vehiculo:ModeloVehiculo): Observable<ModeloVehiculo>{
-    return this.http.post<ModeloVehiculo>(`${this.url}/vehiculos`, vehiculo, {
+  EditarVehiculo$(vehiculo: ModeloVehiculo): Observable<ModeloVehiculo>{
+    console.log(vehiculo)
+    return this.http.put<ModeloVehiculo>(`${this.url}/vehiculos/${vehiculo.Id}`, vehiculo, {
       headers: new HttpHeaders({
         'Authorization': '',
       })

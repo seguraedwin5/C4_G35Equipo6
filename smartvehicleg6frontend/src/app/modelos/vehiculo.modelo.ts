@@ -13,7 +13,7 @@ export class ModeloVehiculo {
     Ciudad?: string 
     Direccion?: string 
     TipoOferta?: string 
-    asesorId?: string | null 
+    asesorId?: string | null = ""
 
     constructor() {
         

@@ -92,7 +92,7 @@ export class VehiculoController {
   ): Promise<Count> {
     return this.vehiculoRepository.updateAll(vehiculo, where);
   }
-
+  @authenticate.skip()
   @get('/vehiculos/{id}')
   @response(200, {
     description: 'Vehiculo model instance',
@@ -126,7 +126,7 @@ export class VehiculoController {
   ): Promise<void> {
     await this.vehiculoRepository.updateById(id, vehiculo);
   }
-
+  @authenticate.skip()
   @put('/vehiculos/{id}')
   @response(204, {
     description: 'Vehiculo PUT success',
