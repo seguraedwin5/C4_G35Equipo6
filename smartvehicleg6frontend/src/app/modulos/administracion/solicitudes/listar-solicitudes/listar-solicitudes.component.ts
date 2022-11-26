@@ -17,8 +17,9 @@ export class ListarSolicitudesComponent {
 
   ListarSolicitudes() {
     this.serviciosolicitud.ListarSolicitudes$().subscribe({
-      next: (newlistasolicitudes:any) => {
+      next: (newlistasolicitudes:ModeloSolicitud[]) => {
         this.listasolicitudes = newlistasolicitudes;
+
       },
       error: (error:any) => {
         console.log(error)

@@ -12,11 +12,11 @@ export class SolicitudService {
   constructor(private http: HttpClient) { }
   
   ListarSolicitudes$(): Observable<ModeloSolicitud[]>{
-    return this.http.get<ModeloSolicitud[]>(`${this.url}/solicitud`);
+    return this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes`);
   }
 
   AgregarSolicitud$(solicitud:ModeloSolicitud): Observable<ModeloSolicitud>{
-    return this.http.post<ModeloSolicitud>(`${this.url}/solicitud`, solicitud, {
+    return this.http.post<ModeloSolicitud>(`${this.url}/solicitudes`, solicitud, {
       headers: new HttpHeaders({
         'Authorization': '',
       })
